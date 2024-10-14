@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Min Portefølje</title>
+    <link rel="stylesheet" href="CSS/portfolio.css">
+</head>
+
+<body>
+    <!--Header section med søkerbar-->
+    <header>
+        <div class="container">
+            <h1>Velkommen til min Portefølje</h1>
+            <p>Mitt navn er William Emanuelsen og jeg går på rosenvilde på IT linjen</p>
+            <!--Søkerbar section-->
+            <input type="text" id="searchInput" placeholder="Søk etter prosjekter..." onkeyup="searchProjects()">
+        </div>
+    </header>
+    
+    <!--Om section-->
+    <section id="om">
+        <div class="container">
+            <h2>Om Meg</h2>
+            <p>Hallo! Jeg er en elev på rosenvilde og jeg går på IM linjen, jeg har lyst til å bli en som jobber innen for IT eller bare koding generelt</p>
+        </div>
+    </section>
+
+    <!--Prosjekter section-->
+    <section id="prosjekter">
+        <div class="container">
+            <h2>Mine Proskjekter</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Prosjekt 1</h3>
+                    <p>Dette prosjekte har ikke kommet ennå</p>
+                </div>
+            </div>
+            <!--legg til flere project-card om du har gått ut av dem-->
+        </div>
+    </section>
+
+    <!--Kontakt section-->
+    <section id="Kontakt">
+        <div class="container">
+            <h2>Kontakt Meg</h2>
+            <p>Du kan nå meg ved: <a href="mailto:william.emanuelsen@gmail.com">william.emanuelsen@gmail.com</a></p>
+        </div>
+    </section>
+
+    <!--Footer section-->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 [Your Name]. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <!--javascript for søkerbar funskjonalitet-->
+    <script>
+        function searchProjects() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let projectCards = document.getElementsByClassName('project-card');
+
+            for (let i = 0; i < projectCards.length; i++) {
+                let projectTitle = projectCards[i].getElementsByTagName('h3')[0].textContent.toLowerCase();
+                let projectDesc = projectCards[i].getElementsByTagName('p')[0].textContent.toLowerCase();
+
+                if (projectTitle.includes(input) || projectDesc.includes(input)) {
+                    projectCards[i].style.display = '';
+                    else {
+                        projectCards[i].style.display = 'none';
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
