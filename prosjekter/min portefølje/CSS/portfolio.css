@@ -35,6 +35,16 @@ nav {
     z-index: 1000;
 }
 
+nav .logo img {
+    height: 50px;
+    width: auto;
+    padding: 5px;
+    transition: transform 0.3s ease;
+}
+
+nav .logo img:hover {
+    transform: scale(1.1);
+}
 nav ul {
     list-style: none;
     margin: 0;
@@ -152,4 +162,66 @@ a {
 
 a:hover {
     color: #f39c12;
+}
+
+@media (max-width:480px) {
+    .container {
+        width: 90%;
+        padding: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+        font: 14px;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    #searchInput {
+        width: 80%;
+    }
+
+    section {
+        padding: 40px 0;
+    }
+
+    .projects-grid {
+        flex-direction: column;
+    }
+
+    .project-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .project-card h3 {
+        font-size: 1.2em;
+    }
+
+    .project-card p {
+        font-size: 1em;
+    }
+
+    #kontakt {
+        padding: 20px 0;
+    }
+    
+    footer p {
+        font-size: 12px;
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+    }
 }
